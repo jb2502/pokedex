@@ -9,6 +9,28 @@
 
 :root {
     --padding-main: 0 80px;
+    --color-primary: #05171E;
+    --color-primary-light: #05171e99;
+    --color-primary-dark: #05171ef2;
+    --color-secondary: #082129;
+    --color-bug: #9F9F28;
+    --color-dark: #4F4747;
+    --color-dragon: #576FBC;
+    --color-electric: #DFBC28;
+    --color-fairy: #E18CE1;
+    --color-fighting: #E49021;
+    --color-fire: #E4613E;
+    --color-flying: #74AAD0;
+    --color-ghost: #6F4570;
+    --color-grass: #439837;
+    --color-ground: #A4733C;
+    --color-ice: #47C8C8;
+    --color-normal: #828282;
+    --color-poison: #9354CB;
+    --color-psychic: #E96C8C;
+    --color-rock: #A9A481;
+    --color-steel: #74B0CB;
+    --color-water: #3099E1;
 }
 
 body {
@@ -21,7 +43,7 @@ body {
 }
 
 header {
-    background-color: darkgrey;
+    background-color: var(--color-secondary);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,17 +63,20 @@ header img {
 
 footer {
     height: 80px;
-    background-color: darkgrey;
+    background-color: var(--color-secondary);
 }
 
 main {
-    background-color: lightgrey;
+    background-color: var(--color-primary);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 80px;
     flex: 1;
     width: 100%;
     position: relative;
+    justify-content: center;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 #pkm-sidebar {
@@ -75,22 +100,158 @@ main {
     top: 80px;
 }
 
-section {
+/* section {
     background-color: lightsalmon;
-    width: 90%;
-    margin: 100px 0 100px 0;
-    height: auto;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
     padding: 20px;
-}
+    height: 100%;
+} */
 
 .card {
-    height: 300px;
-    width: 200px;
-    background-color: antiquewhite;
-    border: red 1px solid;
+    height: 200px;
+    width: 150px;
+    background-color: var(--color-secondary);
     border-radius: 12px;
+    margin: 20px 0 20px 0;
+    color: whitesmoke;
+    border: var(--color-secondary) 2px solid;
+}
+
+.card:active {
+    transform: scale(0.97);
+}
+
+.card-pkm-img {
+    width: auto;
+    height: calc(100% - 68px);
+}
+
+
+.card-pkm-header {
+    display: flex;
+    padding: 0 8px;
+    align-items: center;
+    height: 20px;
+    width: 100%;
+    margin: 4px 0;
+}
+
+.card-order {
+    width: 30%;
+}
+
+.card-pkm-name {
+    width: 70%;
+    text-align: center;
+}
+
+.card-pkm-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-pkm-type-sub {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    margin: 4px 0;
+}
+
+.card-pkm-type img {
+    height: 32px;
+    width: 32px;
+}
+
+
+
+
+
+
+.card2 {
+    height: 200px;
+    width: 150px;
+    background-color: var(--color-secondary);
+    border-radius: 12px;
+    margin: 20px 0 20px 0;
+    color: whitesmoke;
+    border: var(--color-secondary) 2px solid;
+}
+
+.card2:active {
+    transform: scale(0.97);
+}
+
+.card2-pkm-img {
+    width: auto;
+    height: calc(100% - 68px);
+}
+
+
+.card2-pkm-header {
+    display: flex;
+    padding: 0 8px;
+    align-items: center;
+    height: 20px;
+    width: 100%;
+    margin: 4px 0;
+}
+
+.card2-order {
+    width: 30%;
+}
+
+.card2-pkm-name {
+    width: 70%;
+    text-align: center;
+}
+
+.card2-pkm-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 32px;
+    margin: 4px 0;
+}
+
+.card2-pkm-type-sub {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    margin: 4px 0;
+}
+
+.card2-pkm-type img {
+    height: 32px;
+    width: 32px;
+}
+
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeleton-type {
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+}
+
+.skeleton-header {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: var(--color-primary-light);
+    }
+
+    100% {
+        background-color: var(--color-primary-dark);
+    }
 }

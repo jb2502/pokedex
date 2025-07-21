@@ -1,0 +1,179 @@
+.card-bug:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-bug);
+
+}
+
+.card-pkm-img-bg-bug {
+    background-color: var(--color-bug);
+}
+
+.card-dark:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-dark);
+
+}
+
+.card-pkm-img-bg-dark {
+    background-color: var(--color-dark);
+}
+
+.card-dragon:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-dragon);
+
+}
+
+.card-pkm-img-bg-dragon {
+    background-color: var(--color-dragon);
+}
+
+.card-electric:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-electric);
+
+}
+
+.card-pkm-img-bg-electric {
+    background-color: var(--color-electric);
+}
+
+.card-fairy:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-fairy);
+
+}
+
+.card-pkm-img-bg-fairy {
+    background-color: var(--color-fairy);
+}
+
+.card-fighting:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-fighting);
+
+}
+
+.card-pkm-img-bg-fighting {
+    background-color: var(--color-fighting);
+}
+
+.card-fire:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-fire);
+
+}
+
+.card-pkm-img-bg-fire {
+    background-color: var(--color-fire);
+}
+
+.card-flying:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-flying);
+
+}
+
+.card-pkm-img-bg-flying {
+    background-color: var(--color-flying);
+}
+
+.card-ghost:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-ghost);
+
+}
+
+.card-pkm-img-bg-ghost {
+    background-color: var(--color-ghost);
+}
+
+.card-grass:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-grass);
+
+}
+
+.card-pkm-img-bg-grass {
+    background-color: var(--color-grass);
+}
+
+.card-ground:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-ground);
+
+}
+
+.card-pkm-img-bg-ground {
+    background-color: var(--color-ground);
+}
+
+.card-ice:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-ice);
+
+}
+
+.card-pkm-img-bg-ice {
+    background-color: var(--color-ice);
+}
+
+.card-normal:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-normal);
+
+}
+
+.card-pkm-img-bg-normal {
+    background-color: var(--color-normal);
+}
+
+.card-poison:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-poison);
+
+}
+
+.card-pkm-img-bg-poison {
+    background-color: var(--color-poison);
+}
+
+.card-psychic:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-psychic);
+
+}
+
+.card-pkm-img-bg-psychic {
+    background-color: var(--color-psychic);
+}
+
+.card-rock:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-rock);
+
+}
+
+.card-pkm-img-bg-rock {
+    background-color: var(--color-rock);
+}
+
+.card-steel:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-steel);
+
+}
+
+.card-pkm-img-bg-steel {
+    background-color: var(--color-steel);
+}
+
+.card-water:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px var(--color-water);
+
+}
+
+.card-pkm-img-bg-water {
+    background-color: var(--color-water);
+}
