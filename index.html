@@ -10,14 +10,47 @@
     <link rel="stylesheet" href="./style/font.css">
     <link rel="stylesheet" href="./style/assets.css">
     <link rel="stylesheet" href="./style/color.css">
+    <link rel="stylesheet" href="./style/overlay.css">
 </head>
 
 <body>
+    <div onclick="closeOverlay()" id="overlay" class="overlay d-none">
+        <dialog onclick="event.stopPropagation()" class="dialog">
+            <div>
+                <div class="x-close">
+                    <div onclick="closeOverlay()" class="nav-button-close">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="img-pop-up" class="img-pop-up">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="button-cont">
+                <div>
+                    <div class="nav-button" id="prevbtn">
+                        <img onclick=""
+                            src="" alt="">
+                    </div>
+                </div>
+                <p id="p-tag"></p>
+                <div>
+                    <div class="nav-button" id="nextbtn">
+                        <img onclick=""
+                            src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
+    </div>
     <header>
         <img src="./assets/icons/International_Pokémon_logo.svg" alt="Pokemonlogo">
         <div>
             <input type="search" name="Pokemonsuche" id="pkm-search" placeholder="search">
-            <button onclick="toggleSidebar()">Drücken</button>
+            <button onclick="openOverlay()">Drücken</button>
         </div>
 
     </header>
@@ -71,7 +104,7 @@
             reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
         <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
             reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div id="pkm-sidebar">
+        <!-- <div id="pkm-sidebar">
             <div class="sidebar">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus omnis assumenda deserunt
                 aliquid
@@ -88,7 +121,7 @@
                 eos
                 est.
             </div>
-        </div>
+        </div> -->
 
     </main>
     <footer></footer>
