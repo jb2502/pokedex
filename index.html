@@ -14,43 +14,61 @@
 </head>
 
 <body>
-    <div onclick="closeOverlay()" id="overlay" class="overlay d-none">
-        <dialog onclick="event.stopPropagation()" class="dialog">
-            <div>
-                <div class="x-close">
-                    <div onclick="closeOverlay()" class="nav-button-close">
-                        <img src="" alt="">
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div id="img-pop-up" class="img-pop-up">
-                    <img src="" alt="">
-                </div>
-            </div>
-            <div class="button-cont">
+    <dialog class="box-shadow-grass">
+        <section>
+            <div class="d-header">
+                <div class="d-header-id">#1</div>
+                <div class="d-header-name">Bulbasaur</div>
                 <div>
-                    <div class="nav-button" id="prevbtn">
-                        <img onclick=""
-                            src="" alt="">
-                    </div>
-                </div>
-                <p id="p-tag"></p>
-                <div>
-                    <div class="nav-button" id="nextbtn">
-                        <img onclick=""
-                            src="" alt="">
-                    </div>
+                    <img id="close-overlay" onclick="closeOverlay()" src="./assets/icons/close.svg" alt="close dialog">
                 </div>
             </div>
-        </dialog>
+            <div class="d-image card-pkm-img-bg-grass">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                    alt="">
+            </div>
+            <div class="card-pkm-type">
+                <div class="card-pkm-type-sub"><img src="./assets/icons/grass.svg" alt=""></div>
+                <div class="card-pkm-type-sub"><img src="./assets/icons/poison.svg" alt=""></div>
+            </div>
+            <nav>
+                <span>About</span>
+                <span>Stats</span>
+                <span>Evo Chain</span>
+            </nav>
+            <div id="d-content">
+                <table>
+                    <tr>
+                        <td class="td-left">Height:</td>
+                        <td class="td-right">0,6 m</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">Weight:</td>
+                        <td class="td-right">6,9 kg</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">Abilities 1:</td>
+                        <td class="td-right">Overgrow</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">Abilities 2:</td>
+                        <td class="td-right">Chlorophyll</td>
+                    </tr>
 
-    </div>
+                </table>
+            </div>
+            <div class="d-btn-m">
+                <div class="d-btn"><button><img src="./assets/icons/arrow_left.svg" alt="back"></button></div>
+                <div class="d-btn"><button><img src="./assets/icons/arrow_right.svg" alt="foward"></button></div>
+            </div>
+        </section>
+    </dialog>
+
     <header>
         <img src="./assets/icons/International_Pokémon_logo.svg" alt="Pokemonlogo">
         <div>
             <input type="search" name="Pokemonsuche" id="pkm-search" placeholder="search">
-            <button onclick="openOverlay()">Drücken</button>
+            <button id="open-overlay" onclick="openOverlay()">Drücken</button>
         </div>
 
     </header>
@@ -61,7 +79,8 @@
                 <p class="card-pkm-name">Bulbasaur</p>
             </div>
             <div class="card-pkm-img card-pkm-img-bg-grass">
-
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                    alt="">
             </div>
             <div class="card-pkm-type">
                 <div class="card-pkm-type-sub"><img src="./assets/icons/grass.svg" alt=""></div>

@@ -1,7 +1,6 @@
 .card-bug:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-bug);
-
 }
 
 .card-pkm-img-bg-bug {
@@ -11,7 +10,6 @@
 .card-dark:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-dark);
-
 }
 
 .card-pkm-img-bg-dark {
@@ -21,7 +19,6 @@
 .card-dragon:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-dragon);
-
 }
 
 .card-pkm-img-bg-dragon {
@@ -31,7 +28,6 @@
 .card-electric:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-electric);
-
 }
 
 .card-pkm-img-bg-electric {
@@ -41,7 +37,6 @@
 .card-fairy:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-fairy);
-
 }
 
 .card-pkm-img-bg-fairy {
@@ -51,7 +46,6 @@
 .card-fighting:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-fighting);
-
 }
 
 .card-pkm-img-bg-fighting {
@@ -61,7 +55,6 @@
 .card-fire:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-fire);
-
 }
 
 .card-pkm-img-bg-fire {
@@ -71,7 +64,6 @@
 .card-flying:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-flying);
-
 }
 
 .card-pkm-img-bg-flying {
@@ -81,7 +73,6 @@
 .card-ghost:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-ghost);
-
 }
 
 .card-pkm-img-bg-ghost {
@@ -91,7 +82,6 @@
 .card-grass:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-grass);
-
 }
 
 .card-pkm-img-bg-grass {
@@ -101,7 +91,6 @@
 .card-ground:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-ground);
-
 }
 
 .card-pkm-img-bg-ground {
@@ -111,7 +100,6 @@
 .card-ice:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-ice);
-
 }
 
 .card-pkm-img-bg-ice {
@@ -121,7 +109,6 @@
 .card-normal:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-normal);
-
 }
 
 .card-pkm-img-bg-normal {
@@ -131,7 +118,6 @@
 .card-poison:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-poison);
-
 }
 
 .card-pkm-img-bg-poison {
@@ -141,7 +127,6 @@
 .card-psychic:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-psychic);
-
 }
 
 .card-pkm-img-bg-psychic {
@@ -151,7 +136,6 @@
 .card-rock:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-rock);
-
 }
 
 .card-pkm-img-bg-rock {
@@ -161,7 +145,6 @@
 .card-steel:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-steel);
-
 }
 
 .card-pkm-img-bg-steel {
@@ -171,7 +154,6 @@
 .card-water:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px var(--color-water);
-
 }
 
 .card-pkm-img-bg-water {

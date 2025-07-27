@@ -31,17 +31,19 @@
     --color-rock: #A9A481;
     --color-steel: #74B0CB;
     --color-water: #3099E1;
-    --dialog-width: 600px;
+    --dialog-width: 500px;
     --dialog-height: 600px;
 }
 
 body {
-    margin: 0;
-    font-family: "Coiny", system-ui;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    max-width: 1920px;
+}
+
+body:has(dialog[open]) {
+    overflow: hidden;
 }
 
 header {
@@ -54,7 +56,7 @@ header {
     top: 0;
     left: 0;
     z-index: 10;
-    height: 80px;
+    height: 5rem;
     width: 100%;
 
 }
@@ -64,21 +66,21 @@ header img {
 }
 
 footer {
-    height: 80px;
+    height: 5rem;
     background-color: var(--color-secondary);
 }
 
 main {
     background-color: var(--color-primary);
     display: flex;
-    margin-top: 80px;
-    flex: 1;
+    margin-top: 5rem;
+    flex-grow: 1;
     width: 100%;
     /* position: relative; */
     justify-content: center;
-    column-gap: 40px;
+    column-gap: 2.5rem;
     flex-wrap: wrap;
-    align-items: center;
+    align-content: space-around;
 }
 
 /* #pkm-sidebar {
@@ -102,22 +104,13 @@ main {
     top: 80px;
 } */
 
-/* section {
-    background-color: lightsalmon;
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    padding: 20px;
-    height: 100%;
-} */
+
 
 .card {
-    height: 200px;
-    width: 150px;
+    height: 12.5rem;
+    width: 10rem;
     background-color: var(--color-secondary);
-    border-radius: 12px;
+    border-radius: 0.75rem;
     margin: 20px 0 20px 0;
     color: whitesmoke;
     border: var(--color-secondary) 2px solid;
@@ -130,16 +123,23 @@ main {
 .card-pkm-img {
     width: auto;
     height: calc(100% - 68px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-height: 112px;
+    }
 }
 
 
 .card-pkm-header {
     display: flex;
-    padding: 0 8px;
+    padding: 0 0.5rem;
     align-items: center;
     height: 20px;
     width: 100%;
-    margin: 4px 0;
+    margin: 0.25rem 0;
 }
 
 .card-order {
@@ -161,8 +161,8 @@ main {
 .card-pkm-type-sub {
     display: flex;
     align-items: center;
-    padding: 0 12px;
-    margin: 4px 0;
+    padding: 0 0.5rem;
+    margin: 0.25rem 0;
 }
 
 .card-pkm-type img {
@@ -176,8 +176,8 @@ main {
 
 
 .card2 {
-    height: 200px;
-    width: 150px;
+    height: 12.5rem;
+    width: 10rem;
     background-color: var(--color-secondary);
     border-radius: 12px;
     margin: 20px 0 20px 0;
@@ -236,16 +236,7 @@ main {
 
 .skeleton {
     animation: skeleton-loading 1s linear infinite alternate;
-}
-
-.skeleton-type {
-    width: 100%;
-    border-radius: 0 0 12px 12px;
-}
-
-.skeleton-header {
-    width: 100%;
-    border-radius: 12px 12px 0 0;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 @keyframes skeleton-loading {
@@ -256,4 +247,14 @@ main {
     100% {
         background-color: var(--color-primary-dark);
     }
+}
+
+.skeleton-type {
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+}
+
+.skeleton-header {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
 }
