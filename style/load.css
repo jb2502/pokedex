@@ -2,21 +2,16 @@
     height: 12.5rem;
     width: 10rem;
     background-color: var(--color-secondary);
-    border-radius: 12px;
+    border-radius: 0.75rem;
     margin: 20px 0 20px 0;
     color: whitesmoke;
     border: var(--color-secondary) 2px solid;
-}
-
-.card2:active {
-    transform: scale(0.97);
 }
 
 .card2-pkm-img {
     width: auto;
     height: calc(100% - 68px);
 }
-
 
 .card2-pkm-header {
     display: flex;
@@ -25,15 +20,6 @@
     height: 20px;
     width: 100%;
     margin: 4px 0;
-}
-
-.card2-order {
-    width: 30%;
-}
-
-.card2-pkm-name {
-    width: 70%;
-    text-align: center;
 }
 
 .card2-pkm-type {
@@ -45,26 +31,14 @@
     margin: 4px 0;
 }
 
-.card2-pkm-type-sub {
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    margin: 4px 0;
-}
-
-.card2-pkm-type img {
-    height: 32px;
-    width: 32px;
-}
-
 .skeleton {
     animation: skeleton-loading 1s linear infinite alternate;
-    animation: name duration timing-function delay iteration-count direction fill-mode;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 @keyframes skeleton-loading {
     0% {
-        background-color: var(--color-primary-light);
+        background-color: rgba(10, 92, 124, 0.2);
     }
 
     100% {

@@ -38,7 +38,7 @@
                 <span>Evo Chain</span>
             </nav>
             <div id="d-content">
-                <div class="d-evo-chain">
+                <!-- <div class="d-evo-chain">
                     <div class="d-evo"><img
                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
                             alt=""></div>
@@ -51,7 +51,7 @@
                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
                             alt=""></div>
 
-                </div>
+                </div> -->
                 <!-- <table>
                     <tr>
                         <td class="td-left">HP:</td>
@@ -70,7 +70,7 @@
                         <td class="td-right-bar"><div class="bar"><div class="scale" style="width: 45%;">45</div></div></td>
                     </tr>
                 </table> -->
-                <!-- <table>
+                <table>
                     <tr>
                         <td class="td-left">Height:</td>
                         <td class="td-right">0,6 m</td>
@@ -87,7 +87,7 @@
                         <td class="td-left">Abilities 2:</td>
                         <td class="td-right">Chlorophyll</td>
                     </tr>
-                </table> -->
+                </table>
             </div>
             <div class="d-btn-m">
                 <div class="d-btn"><button><img src="./assets/icons/arrow_left.svg" alt="back"></button></div>
@@ -100,12 +100,12 @@
         <img src="./assets/icons/International_Pokémon_logo.svg" alt="Pokemonlogo">
         <div>
             <input type="search" name="Pokemonsuche" id="pkm-search" placeholder="search">
-            <button id="open-overlay" onclick="openOverlay()">Drücken</button>
+            <!-- <button id="open-overlay" onclick="openOverlay()">Drücken</button> -->
         </div>
 
     </header>
     <main>
-        <!-- <div class="card card-grass">
+        <!-- <div class="card card-grass" id="open-overlay" onclick="openOverlay()">
             <div class="card-pkm-header">
                 <p class="card-order">#1</p>
                 <p class="card-pkm-name">Bulbasaur</p>
@@ -127,53 +127,78 @@
             <div class="card2-pkm-img skeleton">
             </div>
             <div class="card2-pkm-type skeleton skeleton-type">
-                <!-- <div class="card-pkm-type-sub skeleton skeleton-type"></div>
-                <div class="card-pkm-type-sub"><img src="./assets/icons/grass.svg" alt=""></div> -->
             </div>
         </div>
-        <!-- <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div>
-        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro soluta quasi
-            reprehenderit, quibusdam hic praesentium nihil nostrum libero debitis tempora.</div> -->
-        <!-- <div id="pkm-sidebar">
-            <div class="sidebar">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus omnis assumenda deserunt
-                aliquid
-                facere quasi. Officia, similique veritatis? Laudantium quae nobis quam cum distinctio perspiciatis
-                eius
-                quasi cupiditate, quibusdam ex consequuntur suscipit nemo, eligendi dignissimos vero tempore nulla,
-                tenetur cumque error amet? Enim magni ex nam neque harum dignissimos praesentium aperiam, optio
-                impedit,
-                numquam rem unde. Vitae error rem cum deleniti magni obcaecati quisquam ad a sapiente fugit et
-                numquam
-                voluptatem natus enim, placeat explicabo excepturi incidunt nobis non esse! Quam esse reiciendis
-                magni
-                alias repellendus harum iusto obcaecati, adipisci cum provident modi ex quisquam ducimus, vitae quis
-                eos
-                est.
+        <div class="card2">
+            <div class="card2-pkm-header skeleton skeleton-header">
+                <p class="card2-order"></p>
+                <p class="card2-pkm-name"></p>
             </div>
-        </div> -->
-
+            <div class="card2-pkm-img skeleton">
+            </div>
+            <div class="card2-pkm-type skeleton skeleton-type">
+            </div>
+        </div>
+        <div class="card2">
+            <div class="card2-pkm-header skeleton skeleton-header">
+                <p class="card2-order"></p>
+                <p class="card2-pkm-name"></p>
+            </div>
+            <div class="card2-pkm-img skeleton">
+            </div>
+            <div class="card2-pkm-type skeleton skeleton-type">
+            </div>
+        </div>
+        <div class="card2">
+            <div class="card2-pkm-header skeleton skeleton-header">
+                <p class="card2-order"></p>
+                <p class="card2-pkm-name"></p>
+            </div>
+            <div class="card2-pkm-img skeleton">
+            </div>
+            <div class="card2-pkm-type skeleton skeleton-type">
+            </div>
+        </div>
+        <div class="card2">
+            <div class="card2-pkm-header skeleton skeleton-header">
+                <p class="card2-order"></p>
+                <p class="card2-pkm-name"></p>
+            </div>
+            <div class="card2-pkm-img skeleton">
+            </div>
+            <div class="card2-pkm-type skeleton skeleton-type">
+            </div>
+        </div>
+        <div class="card2">
+            <div class="card2-pkm-header skeleton skeleton-header">
+                <p class="card2-order"></p>
+                <p class="card2-pkm-name"></p>
+            </div>
+            <div class="card2-pkm-img skeleton">
+            </div>
+            <div class="card2-pkm-type skeleton skeleton-type">
+            </div>
+        </div>
+        <div class="card2">
+            <div class="card2-pkm-header skeleton skeleton-header">
+                <p class="card2-order"></p>
+                <p class="card2-pkm-name"></p>
+            </div>
+            <div class="card2-pkm-img skeleton">
+            </div>
+            <div class="card2-pkm-type skeleton skeleton-type">
+            </div>
+        </div>
+        <div class="card2">
+            <div class="card2-pkm-header skeleton skeleton-header">
+                <p class="card2-order"></p>
+                <p class="card2-pkm-name"></p>
+            </div>
+            <div class="card2-pkm-img skeleton">
+            </div>
+            <div class="card2-pkm-type skeleton skeleton-type">
+            </div>
+        </div>
     </main>
     <footer></footer>
     <script src="./scripts/script.js"></script>

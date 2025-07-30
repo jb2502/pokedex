@@ -9,14 +9,46 @@ dialog {
   border-radius: 1.5rem;
   border: none;
   color: whitesmoke;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+
+  &[open]{
+    animation: openDialog 500ms forwards;
+  }
+}
+
+@keyframes openDialog {
+  from {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes backdropFadeIn {
+  from {
+    background: hsl(0 0% 0% / 0%);
+  }
+
+  to {
+    background: hsl(0 0% 0% / 50%);
+  }
+}
+
+@keyframes backdropFadeOut {
+  from {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  to {
+    background: hsl(0 0% 0% / 0%);
+  }
 }
 
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.3);
-
 }
 
 .box-shadow-grass {
@@ -28,7 +60,6 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background-color: lightsalmon; */
   height: 95%;
   width: 95%;
   display: flex;
@@ -40,7 +71,6 @@ section {
 .d-header {
   height: 2rem;
   width: 100%;
-  /* background-color: aqua; */
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
@@ -55,7 +85,7 @@ section {
 
     &:hover {
       cursor: pointer;
-      background-color: #05171ef2;
+      background-color: #0a5c7c;
     }
 
     &:active {
@@ -67,7 +97,6 @@ section {
 .d-header-id {
   height: 100%;
   width: 20%;
-  /* border: 1px red solid; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,7 +107,6 @@ section {
 .d-header-name {
   height: 100%;
   width: 80%;
-  /* border: 1px red solid; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +115,6 @@ section {
 
 .d-image {
   height: 40%;
-  /* background-color: beige; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -105,7 +132,6 @@ section {
 nav {
   height: 1.5rem;
   width: 100%;
-  /* background-color: aqua; */
   display: flex;
   align-items: center;
   margin-top: 0.25rem;
