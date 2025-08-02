@@ -31,8 +31,8 @@
     --color-rock: #A9A481;
     --color-steel: #74B0CB;
     --color-water: #3099E1;
-    --dialog-width: 500px;
-    --dialog-height: 600px;
+    --dialog-width: 31.25rem;
+    --dialog-height: 37.5rem;
 }
 
 body {
@@ -81,6 +81,15 @@ main {
     flex-wrap: wrap;
     align-content: space-around;
 }
+
+/* #card-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 2.5rem;
+    flex-wrap: wrap;
+    align-content: space-around;
+} */
 
 .card {
     height: 12.5rem;

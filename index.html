@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="./style/color.css">
     <link rel="stylesheet" href="./style/overlay.css">
     <link rel="stylesheet" href="./style/load.css">
+    <script src="./scripts/template.js"></script>
 </head>
 
-<body>
+<body onload="init(0, 100)">
     <dialog class="box-shadow-grass">
         <section>
             <div class="d-header">
@@ -104,104 +105,29 @@
         </div>
 
     </header>
-    <main>
-        <!-- <div class="card card-grass" id="open-overlay" onclick="openOverlay()">
-            <div class="card-pkm-header">
-                <p class="card-order">#1</p>
-                <p class="card-pkm-name">Bulbasaur</p>
-            </div>
-            <div class="card-pkm-img card-pkm-img-bg-grass">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-                    alt="">
-            </div>
-            <div class="card-pkm-type">
-                <div class="card-pkm-type-sub"><img src="./assets/icons/grass.svg" alt=""></div>
-                <div class="card-pkm-type-sub"><img src="./assets/icons/poison.svg" alt=""></div>
-            </div>
-        </div> -->
-        <div class="card2">
-            <div class="card2-pkm-header skeleton skeleton-header">
-                <p class="card2-order"></p>
-                <p class="card2-pkm-name"></p>
-            </div>
-            <div class="card2-pkm-img skeleton">
-            </div>
-            <div class="card2-pkm-type skeleton skeleton-type">
-            </div>
-        </div>
-        <div class="card2">
-            <div class="card2-pkm-header skeleton skeleton-header">
-                <p class="card2-order"></p>
-                <p class="card2-pkm-name"></p>
-            </div>
-            <div class="card2-pkm-img skeleton">
-            </div>
-            <div class="card2-pkm-type skeleton skeleton-type">
-            </div>
-        </div>
-        <div class="card2">
-            <div class="card2-pkm-header skeleton skeleton-header">
-                <p class="card2-order"></p>
-                <p class="card2-pkm-name"></p>
-            </div>
-            <div class="card2-pkm-img skeleton">
-            </div>
-            <div class="card2-pkm-type skeleton skeleton-type">
-            </div>
-        </div>
-        <div class="card2">
-            <div class="card2-pkm-header skeleton skeleton-header">
-                <p class="card2-order"></p>
-                <p class="card2-pkm-name"></p>
-            </div>
-            <div class="card2-pkm-img skeleton">
-            </div>
-            <div class="card2-pkm-type skeleton skeleton-type">
-            </div>
-        </div>
-        <div class="card2">
-            <div class="card2-pkm-header skeleton skeleton-header">
-                <p class="card2-order"></p>
-                <p class="card2-pkm-name"></p>
-            </div>
-            <div class="card2-pkm-img skeleton">
-            </div>
-            <div class="card2-pkm-type skeleton skeleton-type">
-            </div>
-        </div>
-        <div class="card2">
-            <div class="card2-pkm-header skeleton skeleton-header">
-                <p class="card2-order"></p>
-                <p class="card2-pkm-name"></p>
-            </div>
-            <div class="card2-pkm-img skeleton">
-            </div>
-            <div class="card2-pkm-type skeleton skeleton-type">
-            </div>
-        </div>
-        <div class="card2">
-            <div class="card2-pkm-header skeleton skeleton-header">
-                <p class="card2-order"></p>
-                <p class="card2-pkm-name"></p>
-            </div>
-            <div class="card2-pkm-img skeleton">
-            </div>
-            <div class="card2-pkm-type skeleton skeleton-type">
-            </div>
-        </div>
-        <div class="card2">
-            <div class="card2-pkm-header skeleton skeleton-header">
-                <p class="card2-order"></p>
-                <p class="card2-pkm-name"></p>
-            </div>
-            <div class="card2-pkm-img skeleton">
-            </div>
-            <div class="card2-pkm-type skeleton skeleton-type">
-            </div>
-        </div>
+    <main  id="card-content">
+        
+            <!-- <div class="card card-grass" id="open-overlay" onclick="openOverlay()">
+                <div class="card-pkm-header">
+                    <p class="card-order">#1</p>
+                    <p class="card-pkm-name">Bulbasaur</p>
+                </div>
+                <div class="card-pkm-img card-pkm-img-bg-grass">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                        alt="">
+                </div>
+                <div class="card-pkm-type">
+                    <div class="card-pkm-type-sub"><img src="./assets/icons/grass.svg" alt=""></div>
+                    <div class="card-pkm-type-sub"><img src="./assets/icons/poison.svg" alt=""></div>
+                </div>
+            </div> -->
+        
+        
     </main>
     <footer></footer>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/dialog.js"></script>
+    
 </body>
 
 </html>
