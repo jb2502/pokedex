@@ -24,8 +24,6 @@
     background: linear-gradient(to bottom right, #0000 calc(50% - 80px), var(--color-primary-dark) 50%, #0000 calc(50% + 80px)) bottom right/calc(200% + 160px) calc(200% + 160px) rgba(10, 92, 124, 0.2);
 }
 
-
-
 .card2-pkm-type {
     display: flex;
     align-items: center;
@@ -38,7 +36,6 @@
 
 .skeleton {
     animation: skeleton-loading 1s infinite;
-    /* animation: skeleton-loading 1s linear infinite alternate; */
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
@@ -46,14 +43,6 @@
     100% {
         background-position: top left
     }
-
-    /* 0% {
-        background-color: rgba(10, 92, 124, 0.2);
-    }
-
-    100% {
-        background-color: var(--color-primary-dark);
-    } */
 }
 
 .skeleton-type {

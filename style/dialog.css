@@ -155,7 +155,6 @@ span:nth-child(3) {
 
 span:hover {
   cursor: pointer;
-  /* color: #0a5c7c; */
   border: #0a5c7c 2px solid;
 }
 
@@ -222,7 +221,6 @@ td {
 .td-right-bar {
   width: 50%;
   padding: 12px 32px 0 0;
-  /* padding-right: 2rem; */
 }
 
 .td-left {

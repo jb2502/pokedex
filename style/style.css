@@ -62,15 +62,6 @@ main {
     align-content: space-around;
 }
 
-/* #card-content {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    column-gap: 2.5rem;
-    flex-wrap: wrap;
-    align-content: space-around;
-} */
-
 .card {
     height: 12.5rem;
     width: 10rem;
