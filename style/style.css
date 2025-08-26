@@ -141,8 +141,6 @@ input:hover {
     box-shadow: 0px 0px 20px -17px;
 }
 
-input:active {}
-
 .btn {
     width: 10rem;
     height: 3rem;
