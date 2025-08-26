@@ -37,8 +37,8 @@ let actEvoChain = () => {
     activeStats.classList.remove("d-content-active");
 };
 
-let addBoxShadow = (index) => {
-    let type = allPokemon[index].type[0];
+let addBoxShadow = (array, index) => {
+    let type = array[index].type[0];
     dialog.classList.add('box-shadow-' + type);
 };
 
@@ -49,24 +49,47 @@ let removeBoxShadow = () => {
     });
 };
 
+let doesNotExsist = (index) => {
+    if (!allPokemon[index]) {
+        let notExsist = document.getElementById("img-" + index)
+        notExsist.classList.toggle("not-exsist");
+        return;
+    }
+};
+
 let openOverlay = (index) => {
-    renderDialog(index);
-    let activeAbout = document.getElementById("about-dialog");
-    activeAbout.classList.add("d-content-active");
-    dialog.showModal();
+    if (searchPkm !== "") {
+        renderDialog(searchPkm, index);
+        let activeAbout = document.getElementById("about-dialog");
+        activeAbout.classList.add("d-content-active");
+        dialog.showModal();
+    } else {
+        doesNotExsist(index)
+        renderDialog(allPokemon, index);
+        let activeAbout = document.getElementById("about-dialog");
+        activeAbout.classList.add("d-content-active");
+        dialog.showModal();
+    }
 };
 
 let closeOverlay = (index) => {
-    let type = allPokemon[index].type[0];
-    dialog.classList.remove('box-shadow-' + type);
-    notActAll();
-    dialog.close()
+    if (searchPkm !== "") {
+        let type = searchPkm[index].type[0];
+        dialog.classList.remove('box-shadow-' + type);
+        notActAll();
+        dialog.close()
+    } else {
+        let type = allPokemon[index].type[0];
+        dialog.classList.remove('box-shadow-' + type);
+        notActAll();
+        dialog.close()
+    }
 };
 
-let renderDialog = (index) => {
-    let type = allPokemon[index].type[0];
+let renderDialog = (array, index) => {
+    let type = array[index].type[0];
     dialog.classList.add('box-shadow-' + type);
-    dialog.innerHTML = getTemplateDialog(index);
+    dialog.innerHTML = getTemplateDialog(array, index);
 };
 
 //found in internet....sorry :(
@@ -84,19 +107,37 @@ dialog.addEventListener('click', event => {
 });
 
 let loadAboutDialog = (index) => {
-    let about = document.getElementById("d-content");
-    actAbout();
-    about.innerHTML = getTemplateDialogAbout(index);
+    if (searchPkm !== "") {
+        let about = document.getElementById("d-content");
+        actAbout();
+        about.innerHTML = getTemplateDialogAbout(searchPkm, index);
+    } else {
+        let about = document.getElementById("d-content");
+        actAbout();
+        about.innerHTML = getTemplateDialogAbout(allPokemon, index);
+    }
 };
 
 let loadStatsDialog = (index) => {
-    let stats = document.getElementById("d-content");
-    actStats();
-    stats.innerHTML = getTemplateDialogStats(index);
+    if (searchPkm !== "") {
+        let stats = document.getElementById("d-content");
+        actStats();
+        stats.innerHTML = getTemplateDialogStats(searchPkm, index);
+    } else {
+        let stats = document.getElementById("d-content");
+        actStats();
+        stats.innerHTML = getTemplateDialogStats(allPokemon, index);
+    }
 };
 
 let loadEvoChainDialog = (index) => {
-    let evoChainTemplate = document.getElementById("d-content");
-    actEvoChain();
-    evoChainTemplate.innerHTML = getTemplateEvoChain(index);
+    if (searchPkm !== "") {
+        let evoChainTemplate = document.getElementById("d-content");
+        actEvoChain();
+        evoChainTemplate.innerHTML = searchTemplateEvoChain(searchPkm, index);
+    } else {
+        let evoChainTemplate = document.getElementById("d-content");
+        actEvoChain();
+        evoChainTemplate.innerHTML = getTemplateEvoChain(allPokemon, index);
+    }
 };

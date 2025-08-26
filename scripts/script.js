@@ -1,4 +1,5 @@
 allPokemon = [];
+searchPkm = "";
 let input = document.getElementById("pkm-search")
 let offset = 0;
 let limit = 0;
@@ -7,7 +8,7 @@ let newPkm = 20;
 async function init() {
     renderLoadingScreen();
     await loadOffsetLimit(offset, limit);
-    renderPkm();
+    renderPkm(allPokemon);
 };
 
 async function loadNextPkm() {
@@ -17,9 +18,9 @@ async function loadNextPkm() {
     nextPkmBtn.innerHTML = "";
     nextPkmBtn.classList.add("next-pkm-loader");
     await loadOffsetLimit(offset, limit);
-    renderPkm();
+    renderPkm(allPokemon);
     nextPkmBtn.classList.remove("next-pkm-loader");
-    nextPkmBtn.innerHTML = "Next";
+    nextPkmBtn.innerHTML = "More";
     limit = 0;
 };
 
@@ -28,11 +29,11 @@ function renderLoadingScreen() {
     refCardContent.innerHTML = getTemplateLoading();
 };
 
-function renderPkm() {
+function renderPkm(array) {
     let refCardContent = document.getElementById('card-content');
     refCardContent.innerHTML = "";
-    for (let index = 0; index < allPokemon.length; index++) {
-        refCardContent.innerHTML += getTemplatePkmCard(index);
+    for (let index = 0; index < array.length; index++) {
+        refCardContent.innerHTML += getTemplatePkmCard(array, index);
     };
 };
 
@@ -83,43 +84,64 @@ let receiveData = (responseToJson, EvoChainUrlToJson) => {
     allPokemon.push(data);
 };
 
-let currentPkm = (index) => {
+let currentPkm = (array, index) => {
     let currentPkm = document.getElementById('dialog');
-    addBoxShadow(index);
-    currentPkm.innerHTML = getTemplateDialog(index);
+    addBoxShadow(array, index);
+    currentPkm.innerHTML = getTemplateDialog(array, index);
     let activeAbout = document.getElementById("about-dialog");
     activeAbout.classList.add("d-content-active");
 };
 
 let prevPkm = (index) => {
-    if (index === 0) {
-        index = allPokemon.length;
+    if (searchPkm !== "") {
+        if (index === 0) {
+            index = searchPkm.length;
+        }
+        index -= 1;
+        removeBoxShadow(searchPkm);
+        currentPkm(searchPkm, index);
+    } else {
+        if (index === 0) {
+            index = allPokemon.length;
+        }
+        index -= 1;
+        removeBoxShadow(allPokemon);
+        currentPkm(allPokemon, index);
     }
-    index -= 1;
-    removeBoxShadow();
-    currentPkm(index);
 };
 
 let nextPkm = (index) => {
-    if (index === allPokemon.length - 1) {
-        index = -1;
+    if (searchPkm !== "") {
+        if (index === searchPkm.length - 1) {
+            index = -1;
+        }
+        index += 1;
+        removeBoxShadow(searchPkm);
+        currentPkm(searchPkm, index);
+    } else {
+        if (index === allPokemon.length - 1) {
+            index = -1;
+        }
+        index += 1;
+        removeBoxShadow(allPokemon);
+        currentPkm(allPokemon, index);
     }
-    index += 1;
-    removeBoxShadow();
-    currentPkm(index);
+
 };
 
 let filterPkm = () => {
     if (input.value.length >= 3) {
         let filteredPkm = allPokemon.filter(pokemon => pokemon.name.includes(input.value));
+        searchPkm = filteredPkm;
+        renderPkm(searchPkm)
         let refCardContent = document.getElementById('card-content');
         refCardContent.innerHTML = "";
-        for (let index = 0; index < filteredPkm.length; index++) {
-            refCardContent.innerHTML += getTemplatePkmCard((filteredPkm[index].id - 1));
+        for (let index = 0; index < searchPkm.length; index++) {
+            refCardContent.innerHTML += getTemplatePkmCard(searchPkm, index);
         };
-    }
-    else {
-        renderPkm()
+    } else {
+        searchPkm = "";
+        renderPkm(allPokemon)
     }
 };
 
