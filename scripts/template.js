@@ -101,21 +101,21 @@ let getTemplateLoading = () => {
 };
 
 let getTemplateDialog = (array, index) => {
-    let type1 = array[index].type[0];
-    let type2 = array[index].type[1];
-    let ability1 = array[index].ability[0];
-    let ability2 = array[index].ability[1];
+    let type1 = array[0].type[0];
+    let type2 = array[0].type[1];
+    let ability1 = array[0].ability[0];
+    let ability2 = array[0].ability[1];
     return `<section>
             <div class="d-header">
-                <div class="d-header-id">#${array[index].id}</div>
-                <div class="d-header-name">${array[index].name.charAt(0).toUpperCase() + array[index].name.slice(1)}</div>
+                <div class="d-header-id">#${array[0].id}</div>
+                <div class="d-header-name">${array[0].name.charAt(0).toUpperCase() + array[0].name.slice(1)}</div>
                 <div>
                     <img id="close-overlay" onclick="closeOverlay(${index})" src="./assets/icons/close.svg" alt="close dialog">
                 </div>
             </div>
             <div class="d-image card-pkm-img-bg-${type1}">
-                <img src="${array[index].img}"
-                    alt="${array[index].name.charAt(0).toUpperCase() + array[index].name.slice(1)}">
+                <img src="${array[0].img}"
+                    alt="${array[0].name.charAt(0).toUpperCase() + array[0].name.slice(1)}">
             </div>
             <div class="card-pkm-type">
                 <div class="card-pkm-type-sub"><img src="./assets/icons/${type1}.svg" alt="${type1}"></div>
@@ -130,11 +130,11 @@ let getTemplateDialog = (array, index) => {
                 <table>
                     <tr>
                         <td class="td-left">Height:</td>
-                        <td class="td-right">${(array[index].height / 10).toFixed(1).replace(".", ",")} m</td>
+                        <td class="td-right">${(array[0].height / 10).toFixed(1).replace(".", ",")} m</td>
                     </tr>
                     <tr>
                         <td class="td-left">Weight:</td>
-                        <td class="td-right">${(array[index].weight / 10).toFixed(1).replace(".", ",")} kg</td>
+                        <td class="td-right">${(array[0].weight / 10).toFixed(1).replace(".", ",")} kg</td>
                     </tr>
                     <tr>
                         <td class="td-left">Abilities:</td>
@@ -153,11 +153,36 @@ let getTemplateDialog = (array, index) => {
         </section>`
 };
 
-let getTemplateDialogStats = (array, index) => {
-    let hp = array[index].hp;
-    let atk = array[index].atk;
-    let def = array[index].def;
-    let speed = array[index].speed;
+let getTemplateDialogAbout = (array) => {
+    let type1 = array[0].type[0];
+    let type2 = array[0].type[1];
+    let ability1 = array[0].ability[0];
+    let ability2 = array[0].ability[1];
+    return `<table>
+                <tr>
+                    <td class="td-left">Height:</td>
+                    <td class="td-right">${(array[0].height / 10).toFixed(1).replace(".", ",")} m</td>
+                </tr>
+                <tr>
+                    <td class="td-left">Weight:</td>
+                    <td class="td-right">${(array[0].weight / 10).toFixed(1).replace(".", ",")} kg</td>
+                </tr>
+                <tr>
+                    <td class="td-left">Abilities:</td>
+                    <td class="td-right">${ability1.charAt(0).toUpperCase() + ability1.slice(1)}${ability2 ? `, ${ability2.charAt(0).toUpperCase() + ability2.slice(1)}` : ''}</td>
+                </tr>
+                <tr>
+                    <td class="td-left">Type:</td>
+                    <td class="td-right">${type1.charAt(0).toUpperCase() + type1.slice(1)}${type2 ? `, ${type2.charAt(0).toUpperCase() + type2.slice(1)}` : ''}</td>
+                </tr>
+            </table>`
+};
+
+let getTemplateDialogStats = (array) => {
+    let hp = array[0].hp;
+    let atk = array[0].atk;
+    let def = array[0].def;
+    let speed = array[0].speed;
     return `<table>
                 <tr>
                     <td class="td-left">HP:</td>
@@ -178,57 +203,17 @@ let getTemplateDialogStats = (array, index) => {
             </table>`
 };
 
-let getTemplateDialogAbout = (array, index) => {
-    let type1 = array[index].type[0];
-    let type2 = array[index].type[1];
-    let ability1 = array[index].ability[0];
-    let ability2 = array[index].ability[1];
-    return `<table>
-                <tr>
-                    <td class="td-left">Height:</td>
-                    <td class="td-right">${(array[index].height / 10).toFixed(1).replace(".", ",")} m</td>
-                </tr>
-                <tr>
-                    <td class="td-left">Weight:</td>
-                    <td class="td-right">${(array[index].weight / 10).toFixed(1).replace(".", ",")} kg</td>
-                </tr>
-                <tr>
-                    <td class="td-left">Abilities:</td>
-                    <td class="td-right">${ability1.charAt(0).toUpperCase() + ability1.slice(1)}${ability2 ? `, ${ability2.charAt(0).toUpperCase() + ability2.slice(1)}` : ''}</td>
-                </tr>
-                <tr>
-                    <td class="td-left">Type:</td>
-                    <td class="td-right">${type1.charAt(0).toUpperCase() + type1.slice(1)}${type2 ? `, ${type2.charAt(0).toUpperCase() + type2.slice(1)}` : ''}</td>
-                </tr>
-            </table>`
-};
-
-let getTemplateEvoChain = (array, index) => {
-    let poke1 = array[index].pkm1;
-    let poke2 = array[index].pkm2;
-    let poke3 = array[index].pkm3;
+let getTemplateEvoChain = (array) => {
+    let poke1 = array[0].pkm1;
+    let poke2 = array[0].pkm2;
+    let poke3 = array[0].pkm3;
     return `<div class="d-evo-chain">
-                    <div id="img-${(poke1 - 1)}" class="d-evo"><img onclick="openOverlay(${(poke1 - 1)})" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke1}.png"
+                    <div class="d-evo"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke1}.png"
                             alt=""></div>
         ${poke2 ? ` <img class="arrow" src="./assets/icons/arrow_right_small.svg" alt="">
-                    <div id="img-${(poke2 - 1)}" class="d-evo"><img onclick="openOverlay(${(poke2 - 1)})" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke2}.png"
+                    <div class="d-evo"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke2}.png"
                             alt=""></div>` : ''}
         ${poke3 ? ` <img class="arrow" src="./assets/icons/arrow_right_small.svg" alt="">
-                    <div id="img-${(poke3 - 1)}" class="d-evo"><img onclick="openOverlay(${(poke3 - 1)})" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke3}.png"
-                            alt=""></div>` : ''}`
-};
-
-let searchTemplateEvoChain = (array, index) => {
-    let poke1 = array[index].pkm1;
-    let poke2 = array[index].pkm2;
-    let poke3 = array[index].pkm3;
-    return `<div class="d-evo-chain">
-                    <div id="img-${(poke1 - 1)}" class="d-evo"><img onclick="openOverlay(0)" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke1}.png"
-                            alt=""></div>
-        ${poke2 ? ` <img class="arrow" src="./assets/icons/arrow_right_small.svg" alt="">
-                    <div id="img-${(poke2 - 1)}" class="d-evo"><img onclick="openOverlay(1)" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke2}.png"
-                            alt=""></div>` : ''}
-        ${poke3 ? ` <img class="arrow" src="./assets/icons/arrow_right_small.svg" alt="">
-                    <div id="img-${(poke3 - 1)}" class="d-evo"><img onclick="openOverlay(2)" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke3}.png"
+                    <div class="d-evo"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke3}.png"
                             alt=""></div>` : ''}`
 };

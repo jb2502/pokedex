@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="./assets/icons/pokebal_favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/font.css">
-    <link rel="stylesheet" href="./style/assets.css">
     <link rel="stylesheet" href="./style/color.css">
     <link rel="stylesheet" href="./style/dialog.css">
     <link rel="stylesheet" href="./style/load.css">
@@ -22,8 +21,11 @@
 
     <header>
         <img src="./assets/icons/International_Pokémon_logo.svg" alt="Pokemonlogo">
-        <div>
-            <input onkeypress="filterPkm()" type="search" id="pkm-search" placeholder="search">
+        <div style="display: flex; align-items: center; justify-content: center; position: relative; height: 100%;">
+            <div>
+                <input onkeyup="filterPkm()" type="text" id="pkm-search" placeholder="search">
+            </div>
+            <div id="three-letter-search" class="d-none" style="position: absolute; width: auto; bottom: 0; color: red;">min. 3 letter</div>
         </div>
 
     </header>
