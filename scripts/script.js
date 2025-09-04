@@ -1,9 +1,12 @@
-allPokemon = [];
-searchPkm = "";
+let allPokemon = [];
+let searchPkm = "";
 let input = document.getElementById("pkm-search")
 let offset = 0;
 let limit = 0;
 let newPkm = 20;
+let threeLetter = document.getElementById("three-letter-search");
+let refCardContent = document.getElementById("card-content");
+let morePkmBtn = document.getElementById("more-pkm-btn");
 
 async function init() {
     renderLoadingScreen();
@@ -14,13 +17,16 @@ async function init() {
 async function loadNextPkm() {
     offset = allPokemon.length;
     limit += newPkm;
+    let morePkmBtn = document.getElementById("more-pkm-btn");
     let nextPkmBtn = document.getElementById("next-pkm-btn");
     nextPkmBtn.innerHTML = "";
     nextPkmBtn.classList.add("next-pkm-loader");
+    morePkmBtn.disabled = true;
     await loadOffsetLimit(offset, limit);
     renderPkm(allPokemon);
     nextPkmBtn.classList.remove("next-pkm-loader");
     nextPkmBtn.innerHTML = "More";
+    morePkmBtn.disabled = false;
     limit = 0;
 };
 
@@ -58,7 +64,7 @@ async function loadData(id) {
     receiveData(responseToJson)
 };
 
-let receiveData = (responseToJson) => {
+function receiveData(responseToJson) {
     let data = {
         name: responseToJson.species.name,
         id: responseToJson.id,
@@ -75,7 +81,7 @@ async function loadAboutData(id) {
     receiveAboutData(responseToJson)
 }
 
-let receiveAboutData = (responseToJson) => {
+function receiveAboutData(responseToJson) {
     let data = {
         weight: responseToJson.weight,
         height: responseToJson.height,
@@ -92,7 +98,7 @@ async function loadStatsData(id) {
     receiveStatsData(responseToJson)
 };
 
-let receiveStatsData = (responseToJson) => {
+function receiveStatsData(responseToJson) {
     let data = {
         hp: responseToJson.stats[0].base_stat,
         atk: responseToJson.stats[1].base_stat,
@@ -111,7 +117,7 @@ async function loadEvoData(id) {
     receiveEvoData(EvoChainUrlToJson)
 };
 
-let receiveEvoData = (EvoChainUrlToJson) => {
+function receiveEvoData(EvoChainUrlToJson) {
     let data = {
         pkm1: EvoChainUrlToJson.chain.species.url.split('/')[6],
         pkm2: EvoChainUrlToJson.chain.evolves_to[0]?.species.url.split('/')[6],
@@ -126,7 +132,7 @@ async function loadOverlayData(id) {
     receiveOverlayData(responseToJson)
 };
 
-let receiveOverlayData = (responseToJson) => {
+function receiveOverlayData(responseToJson) {
     let data = {
         name: responseToJson.species.name,
         id: responseToJson.id,
@@ -185,26 +191,23 @@ async function nextPkm(index) {
     }
 };
 
-let filterPkm = () => {
-    let threeLetter = document.getElementById("three-letter-search");
-    let refCardContent = document.getElementById("card-content");
+function filterPkm() {
     if (input.value.length < 3) {
-        threeLetter.classList.remove("d-none")
-    };
+        morePkmBtn.disabled = true;
+        threeLetter.classList.remove("d-none");
+    }
     if (input.value.length >= 3) {
-        threeLetter.classList.add("d-none")
+        morePkmBtn.disabled = true;
+        threeLetter.classList.add("d-none");
         let filteredPkm = allPokemon.filter(pokemon => pokemon.name.includes(input.value));
         searchPkm = filteredPkm;
-        renderPkm(searchPkm)
-        refCardContent.innerHTML = "";
-        for (let index = 0; index < searchPkm.length; index++) {
-            refCardContent.innerHTML += getTemplatePkmCard(searchPkm, index);
-        };
-    };
+        renderPkm(searchPkm);
+    }
     if (input.value.length === 0 || input.value === "") {
-        threeLetter.classList.add("d-none")
+        threeLetter.classList.add("d-none");
         searchPkm = "";
-        renderPkm(allPokemon)
+        morePkmBtn.disabled = false;
+        renderPkm(allPokemon);
     }
 };
 

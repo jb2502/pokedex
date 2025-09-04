@@ -76,7 +76,7 @@ async function openOverlay(index) {
     }
 };
 
-let closeOverlay = (index) => {
+function closeOverlay (index) {
     if (searchPkm !== "") {
         let type = searchPkm[index].type[0];
         dialog.classList.remove('box-shadow-' + type);
@@ -92,7 +92,7 @@ let closeOverlay = (index) => {
     }
 };
 
-let renderDialog = (array, index) => {
+function renderDialog(array, index) {
     let type = array[0].type[0];
     dialog.classList.add('box-shadow-' + type);
     dialog.innerHTML = getTemplateDialog(array, index);

@@ -16,24 +16,28 @@
 
 <body onload="init()">
     <dialog id="dialog">
-        
+
     </dialog>
 
     <header>
-        <img src="./assets/icons/International_Pokémon_logo.svg" alt="Pokemonlogo">
-        <div style="display: flex; align-items: center; justify-content: center; position: relative; height: 100%;">
-            <div>
-                <input onkeyup="filterPkm()" type="text" id="pkm-search" placeholder="search">
+        <div class="header-container">
+            <img src="./assets/icons/International_Pokémon_logo.svg" alt="Pokemonlogo">
+            <div style="display: flex; align-items: center; justify-content: center; position: relative; height: 100%;">
+                <div>
+                    <input onkeyup="filterPkm()" type="text" id="pkm-search" placeholder="search">
+                </div>
+                <div id="three-letter-search" class="d-none"
+                    style="position: absolute; width: auto; bottom: 0; color: red;">min. 3 letter</div>
             </div>
-            <div id="three-letter-search" class="d-none" style="position: absolute; width: auto; bottom: 0; color: red;">min. 3 letter</div>
         </div>
+
 
     </header>
     <main id="card-content">
 
     </main>
     <div></div>
-    <footer><button class="btn" onclick="loadNextPkm()">
+    <footer><button id="more-pkm-btn" class="btn" onclick="loadNextPkm()">
             <div id="next-pkm-btn">More</div>
         </button></footer>
     <script src="./scripts/script.js"></script>

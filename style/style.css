@@ -17,6 +17,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
 }
 
 body:has(dialog[open]) {
@@ -24,17 +27,25 @@ body:has(dialog[open]) {
 }
 
 header {
-    background-color: var(--color-secondary);
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding: var(--padding-main);
+    background-color: var(--color-secondary);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
     height: 5rem;
     width: 100%;
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    padding: var(--padding-main);
+    width: 1920px;
 
     img {
         height: 80%;
@@ -47,18 +58,19 @@ footer {
     background-color: var(--color-secondary);
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 main {
-    background-color: var(--color-primary);
     display: flex;
     margin-top: 5rem;
+    padding: var(--padding-main);
     flex-grow: 1;
-    width: 100%;
     justify-content: center;
     column-gap: 2.5rem;
     flex-wrap: wrap;
-    align-content: space-around;
+    align-content: center;
+    max-width: 1920px;
 }
 
 .card {
